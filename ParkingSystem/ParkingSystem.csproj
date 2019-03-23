@@ -62,6 +62,17 @@
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Administrator.cs" />
+    <Compile Include="Cars.cs" />
+    <Compile Include="City_ParkingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>City_ParkingDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="City_ParkingDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>City_ParkingDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -69,19 +80,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hello.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Hello.Designer.cs">
-      <DependentUpon>Hello.cs</DependentUpon>
-    </Compile>
     <Compile Include="ParkingDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ParkingDetailForm.Designer.cs">
       <DependentUpon>ParkingDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Parkings_1.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="Penalty.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="Place.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
@@ -96,14 +105,21 @@
     <Compile Include="User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Userclass.cs" />
+    <Compile Include="UserDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDetail.Designer.cs">
+      <DependentUpon>UserDetail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddParkingPlace.resx">
+      <DependentUpon>AddParkingPlace.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Hello.resx">
-      <DependentUpon>Hello.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParkingDetailForm.resx">
       <DependentUpon>ParkingDetailForm.cs</DependentUpon>
@@ -123,6 +139,31 @@
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserDetail.resx">
+      <DependentUpon>UserDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="City_ParkingDataSet.xsc">
+      <DependentUpon>City_ParkingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="City_ParkingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>City_ParkingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="City_ParkingDataSet.xss">
+      <DependentUpon>City_ParkingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="City_ParkingDataSet1.xsc">
+      <DependentUpon>City_ParkingDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="City_ParkingDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>City_ParkingDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="City_ParkingDataSet1.xss">
+      <DependentUpon>City_ParkingDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

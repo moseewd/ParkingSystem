@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="City_ParkingDataSet" targetNamespace="http://tempuri.org/City_ParkingDataSet.xsd" xmlns:mstns="http://tempuri.org/City_ParkingDataSet.xsd" xmlns="http://tempuri.org/City_ParkingDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="City_ParkingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="City_ParkingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ParkingSystem.Properties.Settings.GlobalReference.Default.City_ParkingConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="v_ParkingTableAdapter" GeneratorDataComponentClassName="v_ParkingTableAdapter" Name="v_Parking" UserDataComponentName="v_ParkingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="City_ParkingConnectionString (Settings)" DbObjectName="[City Parking].dbo.v_Parking" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, Cost, [Количество мест], [Количество свободных мест], [Количество занятых мест] FROM dbo.v_Parking</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Cost" DataSetColumn="Cost" />
+              <Mapping SourceColumn="Количество мест" DataSetColumn="Количество мест" />
+              <Mapping SourceColumn="Количество свободных мест" DataSetColumn="Количество свободных мест" />
+              <Mapping SourceColumn="Количество занятых мест" DataSetColumn="Количество занятых мест" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="City_ParkingDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="City_ParkingDataSet" msprop:Generator_UserDSName="City_ParkingDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="v_Parking" msprop:Generator_TableClassName="v_ParkingDataTable" msprop:Generator_TableVarName="tablev_Parking" msprop:Generator_TablePropName="v_Parking" msprop:Generator_RowDeletingName="v_ParkingRowDeleting" msprop:Generator_RowChangingName="v_ParkingRowChanging" msprop:Generator_RowEvHandlerName="v_ParkingRowChangeEventHandler" msprop:Generator_RowDeletedName="v_ParkingRowDeleted" msprop:Generator_UserTableName="v_Parking" msprop:Generator_RowChangedName="v_ParkingRowChanged" msprop:Generator_RowEvArgName="v_ParkingRowChangeEvent" msprop:Generator_RowClassName="v_ParkingRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Cost" msprop:Generator_ColumnVarNameInTable="columnCost" msprop:Generator_ColumnPropNameInRow="Cost" msprop:Generator_ColumnPropNameInTable="CostColumn" msprop:Generator_UserColumnName="Cost" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Количество_x0020_мест" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnКоличество_мест" msprop:Generator_ColumnPropNameInRow="Количество_мест" msprop:Generator_ColumnPropNameInTable="Количество_местColumn" msprop:Generator_UserColumnName="Количество мест" type="xs:int" minOccurs="0" />
+              <xs:element name="Количество_x0020_свободных_x0020_мест" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnКоличество_свободных_мест" msprop:Generator_ColumnPropNameInRow="Количество_свободных_мест" msprop:Generator_ColumnPropNameInTable="Количество_свободных_местColumn" msprop:Generator_UserColumnName="Количество свободных мест" type="xs:int" minOccurs="0" />
+              <xs:element name="Количество_x0020_занятых_x0020_мест" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnКоличество_занятых_мест" msprop:Generator_ColumnPropNameInRow="Количество_занятых_мест" msprop:Generator_ColumnPropNameInTable="Количество_занятых_местColumn" msprop:Generator_UserColumnName="Количество занятых мест" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:v_Parking" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

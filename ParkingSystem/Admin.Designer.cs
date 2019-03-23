@@ -28,34 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.city_ParkingDataSet = new ParkingSystem.City_ParkingDataSet();
+            this.vParkingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_ParkingTableAdapter = new ParkingSystem.City_ParkingDataSetTableAdapters.v_ParkingTableAdapter();
             this.advancedDataGridView1 = new ADGV.AdvancedDataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоМестDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоСвободныхМестDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоЗанятыхМестDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.advancedDataGridView2 = new ADGV.AdvancedDataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.city_ParkingDataSet1 = new ParkingSystem.City_ParkingDataSet1();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userTableAdapter = new ParkingSystem.City_ParkingDataSet1TableAdapters.UserTableAdapter();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.city_ParkingDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vParkingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.city_ParkingDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -75,6 +87,39 @@
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 308);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(266, 142);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(3, 39);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(260, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Добавить новую парковочную зону";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(3, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(260, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Добавить нового администратора";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -88,8 +133,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.advancedDataGridView1);
-            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.advancedDataGridView2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -100,8 +144,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.advancedDataGridView2);
-            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.advancedDataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -110,122 +153,157 @@
             this.tabPage2.Text = "Парковочные места";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // city_ParkingDataSet
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 308);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(266, 142);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.city_ParkingDataSet.DataSetName = "City_ParkingDataSet";
+            this.city_ParkingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // groupBox2
+            // vParkingBindingSource
             // 
-            this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(3, 321);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(516, 100);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.vParkingBindingSource.DataMember = "v_Parking";
+            this.vParkingBindingSource.DataSource = this.city_ParkingDataSet;
+            // 
+            // v_ParkingTableAdapter
+            // 
+            this.v_ParkingTableAdapter.ClearBeforeFill = true;
             // 
             // advancedDataGridView1
             // 
+            this.advancedDataGridView1.AutoGenerateColumns = false;
             this.advancedDataGridView1.AutoGenerateContextFilters = true;
             this.advancedDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.costDataGridViewTextBoxColumn,
+            this.количествоМестDataGridViewTextBoxColumn,
+            this.количествоСвободныхМестDataGridViewTextBoxColumn,
+            this.количествоЗанятыхМестDataGridViewTextBoxColumn});
+            this.advancedDataGridView1.DataSource = this.vParkingBindingSource;
             this.advancedDataGridView1.DateWithTime = false;
             this.advancedDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridView1.Location = new System.Drawing.Point(3, 3);
             this.advancedDataGridView1.Name = "advancedDataGridView1";
-            this.advancedDataGridView1.Size = new System.Drawing.Size(516, 318);
-            this.advancedDataGridView1.TabIndex = 1;
+            this.advancedDataGridView1.Size = new System.Drawing.Size(516, 418);
+            this.advancedDataGridView1.TabIndex = 3;
             this.advancedDataGridView1.TimeFilter = false;
             // 
-            // groupBox3
+            // iDDataGridViewTextBoxColumn
             // 
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(3, 321);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(516, 100);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            this.costDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // количествоМестDataGridViewTextBoxColumn
+            // 
+            this.количествоМестDataGridViewTextBoxColumn.DataPropertyName = "Количество мест";
+            this.количествоМестDataGridViewTextBoxColumn.HeaderText = "Количество мест";
+            this.количествоМестDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.количествоМестDataGridViewTextBoxColumn.Name = "количествоМестDataGridViewTextBoxColumn";
+            this.количествоМестDataGridViewTextBoxColumn.ReadOnly = true;
+            this.количествоМестDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // количествоСвободныхМестDataGridViewTextBoxColumn
+            // 
+            this.количествоСвободныхМестDataGridViewTextBoxColumn.DataPropertyName = "Количество свободных мест";
+            this.количествоСвободныхМестDataGridViewTextBoxColumn.HeaderText = "Количество свободных мест";
+            this.количествоСвободныхМестDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.количествоСвободныхМестDataGridViewTextBoxColumn.Name = "количествоСвободныхМестDataGridViewTextBoxColumn";
+            this.количествоСвободныхМестDataGridViewTextBoxColumn.ReadOnly = true;
+            this.количествоСвободныхМестDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // количествоЗанятыхМестDataGridViewTextBoxColumn
+            // 
+            this.количествоЗанятыхМестDataGridViewTextBoxColumn.DataPropertyName = "Количество занятых мест";
+            this.количествоЗанятыхМестDataGridViewTextBoxColumn.HeaderText = "Количество занятых мест";
+            this.количествоЗанятыхМестDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.количествоЗанятыхМестDataGridViewTextBoxColumn.Name = "количествоЗанятыхМестDataGridViewTextBoxColumn";
+            this.количествоЗанятыхМестDataGridViewTextBoxColumn.ReadOnly = true;
+            this.количествоЗанятыхМестDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // advancedDataGridView2
             // 
+            this.advancedDataGridView2.AutoGenerateColumns = false;
             this.advancedDataGridView2.AutoGenerateContextFilters = true;
             this.advancedDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.advancedDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn1,
+            this.fullNameDataGridViewTextBoxColumn,
+            this.balanceDataGridViewTextBoxColumn,
+            this.debtDataGridViewTextBoxColumn,
+            this.adminDataGridViewCheckBoxColumn});
+            this.advancedDataGridView2.DataSource = this.userBindingSource;
             this.advancedDataGridView2.DateWithTime = false;
             this.advancedDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.advancedDataGridView2.Location = new System.Drawing.Point(3, 3);
             this.advancedDataGridView2.Name = "advancedDataGridView2";
-            this.advancedDataGridView2.Size = new System.Drawing.Size(516, 318);
+            this.advancedDataGridView2.Size = new System.Drawing.Size(516, 418);
             this.advancedDataGridView2.TabIndex = 1;
             this.advancedDataGridView2.TimeFilter = false;
             // 
-            // button1
+            // city_ParkingDataSet1
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(3, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.city_ParkingDataSet1.DataSetName = "City_ParkingDataSet1";
+            this.city_ParkingDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button2
+            // userBindingSource
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(3, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.city_ParkingDataSet1;
             // 
-            // groupBox4
+            // userTableAdapter
             // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox4.Location = new System.Drawing.Point(3, 16);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(151, 81);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.userTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox1
+            // iDDataGridViewTextBoxColumn1
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(3, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 1;
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // button3
+            // fullNameDataGridViewTextBoxColumn
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(3, 36);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "Full_Name";
+            this.fullNameDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            this.fullNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // button4
+            // balanceDataGridViewTextBoxColumn
             // 
-            this.button4.Location = new System.Drawing.Point(6, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
+            this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
+            this.balanceDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
+            this.balanceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // debtDataGridViewTextBoxColumn
+            // 
+            this.debtDataGridViewTextBoxColumn.DataPropertyName = "Debt";
+            this.debtDataGridViewTextBoxColumn.HeaderText = "Debt";
+            this.debtDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.debtDataGridViewTextBoxColumn.Name = "debtDataGridViewTextBoxColumn";
+            this.debtDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // adminDataGridViewCheckBoxColumn
+            // 
+            this.adminDataGridViewCheckBoxColumn.DataPropertyName = "Admin";
+            this.adminDataGridViewCheckBoxColumn.HeaderText = "Admin";
+            this.adminDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.adminDataGridViewCheckBoxColumn.Name = "adminDataGridViewCheckBoxColumn";
+            this.adminDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // Admin
             // 
@@ -241,16 +319,16 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.city_ParkingDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vParkingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.advancedDataGridView2)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.city_ParkingDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,13 +342,23 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private ADGV.AdvancedDataGridView advancedDataGridView1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private City_ParkingDataSet city_ParkingDataSet;
+        private System.Windows.Forms.BindingSource vParkingBindingSource;
+        private City_ParkingDataSetTableAdapters.v_ParkingTableAdapter v_ParkingTableAdapter;
         private ADGV.AdvancedDataGridView advancedDataGridView2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
+        private ADGV.AdvancedDataGridView advancedDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количествоМестDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количествоСвободныхМестDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количествоЗанятыхМестDataGridViewTextBoxColumn;
+        private City_ParkingDataSet1 city_ParkingDataSet1;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private City_ParkingDataSet1TableAdapters.UserTableAdapter userTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn debtDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn adminDataGridViewCheckBoxColumn;
     }
 }
