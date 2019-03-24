@@ -12,16 +12,25 @@ using System.Windows.Forms;
 
 namespace ParkingSystem
 {
-    public partial class AddParkingPlace : Form
+    public partial class AddCard : Form
     {
-        public AddParkingPlace()
+        public int ID;
+        public AddCard()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
         {
+            if (maskedTextBox1.Text.Length != 14)
+            {
+                button1.Enabled = false;
 
+            }
+            else
+            {
+                button1.Enabled = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,12 +41,7 @@ namespace ParkingSystem
                 {
                     connection.Open();
                     SqlCommand command = new SqlCommand();
-                    command.CommandText += $"INSERT INTO [dbo].[Parkings] ([Cost]) Values('{textBox2.Text}'); ";
-
-                    for (int i = 0; i <Convert.ToInt32(textBox1.Text) ; i++)
-                    {
-                        command.CommandText += " INSERT INTO[dbo].[Place]([FK_Parking]) VALUES((Select Max(ID) FROM[dbo].[Parkings]));";
-                    }
+                    command.CommandText = $"INSERT INTO [dbo].[Payment] ([Card],[FK_User]) Values('{maskedTextBox1.Text}',{ID})";
                     command.Connection = connection;
                     command.ExecuteNonQuery();
                     this.DialogResult = DialogResult.OK;
@@ -49,12 +53,6 @@ namespace ParkingSystem
                 Debug.WriteLine(exc);
                 this.DialogResult = DialogResult.Cancel;
             }
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

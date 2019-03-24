@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,5 +51,70 @@ namespace ParkingSystem
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var reg = new AddNewAdmin();
+            if (reg.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Администратор успешно добавлен в базу данных");
+               userBindingSource.DataSource= userTableAdapter.GetData();
+            }
+            else
+            {
+                MessageBox.Show("Неудалось добавить администратора в базу данных");
+
+            }
+        }
+
+        private void advancedDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void advancedDataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            if (advancedDataGridView2.SelectedRows.Count > 0)
+            {
+               
+                var Det = new UserDetail((int)advancedDataGridView2.Rows[advancedDataGridView2.SelectedRows[0].Index].Cells[0].Value);
+                
+                Det.ShowDialog();
+            }
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog file = new SaveFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(Path.GetFullPath(file.FileName));
+                
+                    var table = (DataSet)userBindingSource.DataSource;
+
+                for (int i = 0; i < table.Tables[0].Columns.Count; i++)
+                {
+                    writer.Write(table.Tables[0].Columns[i].ColumnName + "\t");
+                }
+                writer.WriteLine();
+                for (int i = 0; i < table.Tables[0].Columns.Count; i++)
+                {
+                    for (int j = 0; j < table.Tables[0].Rows.Count; j++)
+                    {
+                        writer.Write(table.Tables[0].Rows[j][i].ToString() + "\t");
+                        Debug.WriteLine(table.Tables[0].Rows[j][i].ToString());
+                    }
+                    writer.WriteLine();
+                }
+                writer.Close();
+                MessageBox.Show("Сохранение завершено");
+            }
+                
+                   
+            }
+            
+        
     }
 }

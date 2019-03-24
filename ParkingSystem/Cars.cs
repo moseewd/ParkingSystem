@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ParkingSystem
 {
-    class Cars
+    public class Cars
     {
         public int ID
         {
@@ -36,6 +36,10 @@ namespace ParkingSystem
                 adapter.Fill(dataTable);
             }
             return dataTable.AsEnumerable().Select(el => new Cars() { ID = Convert.ToInt32(el["ID"]), Number = Convert.ToString(el["Number"]), FK_User = Convert.ToInt32(el["FK_User"]) }).ToList();
+        }
+        public override string ToString()
+        {
+            return Number;
         }
     }
 }

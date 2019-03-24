@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParkingSystem
 {
-    class Userclass
+    public class Userclass
     {
         public   int ID
         {
