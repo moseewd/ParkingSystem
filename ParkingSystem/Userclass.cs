@@ -68,6 +68,7 @@ namespace ParkingSystem
             set;
         }
         public List<Cars> carsList => Cars.GetCars(this.ID);
+        public List<Penalty> penaltylist => Penalty.GetPenalty(this.ID);
         public Userclass()
         {
             ID = 0;

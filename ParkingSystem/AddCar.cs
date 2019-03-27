@@ -54,5 +54,10 @@ namespace ParkingSystem
                 button2.Enabled = true;
             }
         }
+
+        private void AddCar_Load(object sender, EventArgs e)
+        {
+            button2.Enabled = false;
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace ParkingSystem
             if (addPark.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("Новая парковочная зона успешно добавлена в базу данных");
+                vParkingBindingSource.DataSource = v_ParkingTableAdapter.GetData();
             }
             else
             {
@@ -114,7 +115,26 @@ namespace ParkingSystem
                 
                    
             }
-            
-        
+
+        private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void advancedDataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (advancedDataGridView1.SelectedRows.Count > 0)
+            {
+
+                var Det = new ParkingDetailForm((int)advancedDataGridView1.Rows[advancedDataGridView1.SelectedRows[0].Index].Cells[0].Value);
+
+                Det.ShowDialog();
+            }
+        }
     }
 }
